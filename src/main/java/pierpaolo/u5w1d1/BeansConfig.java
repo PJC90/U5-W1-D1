@@ -26,7 +26,14 @@ public class BeansConfig {
         List<Topping> tList = new ArrayList<>();
         tList.add(pomodoro());
         tList.add(mozzarella());
-        return new Pizza("Margherita", tList);
+        return new Pizza("Margherita", tList, false);
+    }
+    @Bean
+    public Pizza margheritaXl(){
+        List<Topping> tList = new ArrayList<>();
+        tList.add(pomodoro());
+        tList.add(mozzarella());
+        return new Pizza("Margherita XL", tList, true);
     }
     @Bean
     public Pizza vikinga(){
@@ -35,7 +42,7 @@ public class BeansConfig {
         tList.add(mozzarella());
         tList.add(funghi());
         tList.add(salame());
-        return new Pizza("Vikinga", tList);
+        return new Pizza("Vikinga", tList, false);
     }
     @Bean
     public Bevanda coca(){return new Bevanda("Coca cola",2.99,456);}
@@ -46,6 +53,7 @@ public class BeansConfig {
         List<Bevanda> bevandaList = new ArrayList<>();
 
         pizzaList.add(margherita());
+        pizzaList.add(margheritaXl());
         pizzaList.add(vikinga());
 
         bevandaList.add(coca());

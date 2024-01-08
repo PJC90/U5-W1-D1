@@ -10,31 +10,34 @@ import java.util.List;
 public class Pizza extends Prodotto{
     private String nome;
     private List<Topping> toppings;
+    private boolean isXl = false;
 
-
-    public Pizza(String nome, List<Topping> toppings) {
+    public Pizza(String nome, List<Topping> toppings, boolean isXl) {
         super(4.99,1032);
         this.nome = nome;
         this.toppings = toppings;
-        this.calorie = setCalorie(toppings);
-        this.prezzo = setPrezzo(toppings);
+        this.calorie = setCalorie(toppings, isXl);
+        this.prezzo = setPrezzo(toppings, isXl);
+        this.isXl = isXl;
     }
-    public int setCalorie(List<Topping> toppings){
+    public int setCalorie(List<Topping> toppings, boolean isXl){
         int tot = 1032;
         if(toppings != null){
             for(int i = 0; i< toppings.size(); i++){
                 tot += toppings.get(i).getCalorie();
             }
         }
+        if (isXl) return (tot += (tot * 5) / 100);
         return tot;
     }
-    public double setPrezzo(List<Topping> toppings){
+    public double setPrezzo(List<Topping> toppings, boolean isXl){
         double tot = 4.99;
         if(toppings != null){
             for(int i = 0; i<toppings.size(); i++){
                 tot += toppings.get(i).getPrezzo();
             }
         }
+        if (isXl) return tot += (tot * 10) / 100;
         return tot;
     }
 
@@ -45,6 +48,7 @@ public class Pizza extends Prodotto{
                 ", Calorie=" + calorie +
                 ", Prezzo=" + prezzo +
                 "," + toppings +
+                ", isXl=" + isXl +
                 "} " ;
     }
 }
