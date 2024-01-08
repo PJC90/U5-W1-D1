@@ -7,14 +7,21 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@AllArgsConstructor
-public class Topping {
+
+public class Topping extends Prodotto{
     private String nome;
-    private double prezzoTopping;
-    private int calorie;
+
+    public Topping(double prezzo, int calorie, String nome) {
+        super(prezzo, calorie);
+        this.nome = nome;
+    }
 
     @Override
     public String toString() {
-        return nome;
+        return "Topping{" +
+                "nome='" + nome + '\'' +
+                ", prezzo=" + prezzo +
+                ", calorie=" + calorie +
+                "} ";
     }
 }

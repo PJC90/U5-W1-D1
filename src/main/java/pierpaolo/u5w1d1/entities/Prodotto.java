@@ -3,16 +3,13 @@ package pierpaolo.u5w1d1.entities;
 import lombok.*;
 
 @Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 public abstract class Prodotto {
-    private String nome;
-    private double prezzo;
-    private int calorie;
 
-    public Prodotto(String nome) {
-        this.nome = nome;
+    double prezzo;
+    int calorie;
+
+    public Prodotto(double prezzo, int calorie) {
+        this.prezzo = prezzo;
+        this.calorie = calorie;
     }
 }

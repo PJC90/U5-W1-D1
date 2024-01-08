@@ -14,16 +14,11 @@ public class U5w1d1Application {
 
 		SpringApplication.run(U5w1d1Application.class, args);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(U5w1d1Application.class);
-		Pizza p = (Pizza) ctx.getBean("getPizza");
-		System.out.println(p);
-		Pizza pc = (Pizza) ctx.getBean("pizzaContadina");
-		System.out.println(pc);
-		pc.setNome("Contadina porca");
-		Topping t = (Topping) ctx.getBean("tartufo");
-		pc.addTopping(t);
-		System.out.println(pc);
-		Bevanda b = (Bevanda) ctx.getBean("baladin");
-		System.out.println(b);
+
+
+
+
+		ctx.close();
 	}
 
 }

@@ -7,23 +7,18 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Bevanda extends Prodotto{
-    private String quantità;
-    private String graduazione;
+    String nome;
 
-    public Bevanda(String nome, double prezzo, int calorie, String quantità, String graduazione) {
-        super();
-        setNome(nome);
-        setPrezzo(prezzo);
-        setCalorie(calorie);
-        this.quantità = quantità;
-        this.graduazione = graduazione;
+
+    public Bevanda(String nome, double prezzo, int calorie) {
+        super(prezzo, calorie);
+        this.nome = nome;
     }
 
     @Override
     public String toString() {
         return "Bevanda{" +
-                "quantità='" + quantità + '\'' +
-                ", graduazione='" + graduazione + '\'' +
+                "nome='" + nome + '\'' +
                 "} " + super.toString();
     }
 }
