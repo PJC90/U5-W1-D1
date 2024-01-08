@@ -11,4 +11,8 @@ public abstract class Prodotto {
     private String nome;
     private double prezzo;
     private int calorie;
+
+    public Prodotto(String nome) {
+        this.nome = nome;
+    }
 }

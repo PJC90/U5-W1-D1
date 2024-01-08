@@ -8,9 +8,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @AllArgsConstructor
-@ToString
 public class Topping {
     private String nome;
     private double prezzoTopping;
     private int calorie;
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 }
