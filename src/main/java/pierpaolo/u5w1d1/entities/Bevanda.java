@@ -18,7 +18,9 @@ public class Bevanda extends Prodotto{
     @Override
     public String toString() {
         return "Bevanda{" +
-                "nome='" + nome + '\'' +
-                "} " + super.toString();
+                "nome='" + nome + '\'' +", "+
+                "calorie= " + calorie + ", "+
+        "prezzo= " + prezzo
+                ;
     }
 }

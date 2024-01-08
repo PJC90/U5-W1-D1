@@ -15,7 +15,7 @@ public class Pizza extends Prodotto{
     public Pizza(String nome, List<Topping> toppings) {
         super(4.99,1032);
         this.nome = nome;
-        this.toppings = new ArrayList<>();
+        this.toppings = toppings;
         this.calorie = setCalorie(toppings);
         this.prezzo = setPrezzo(toppings);
     }
@@ -25,16 +25,16 @@ public class Pizza extends Prodotto{
             for(int i = 0; i< toppings.size(); i++){
                 tot += toppings.get(i).getCalorie();
             }
-        } else return tot;
+        }
         return tot;
     }
     public double setPrezzo(List<Topping> toppings){
         double tot = 4.99;
         if(toppings != null){
             for(int i = 0; i<toppings.size(); i++){
-                tot += toppings.get(i).getCalorie();
+                tot += toppings.get(i).getPrezzo();
             }
-        }else return  tot;
+        }
         return tot;
     }
 
@@ -44,7 +44,7 @@ public class Pizza extends Prodotto{
                 "nome='" + nome + '\'' +
                 ", Calorie=" + calorie +
                 ", Prezzo=" + prezzo +
-                ", toppings=" + toppings +
+                "," + toppings +
                 "} " ;
     }
 }

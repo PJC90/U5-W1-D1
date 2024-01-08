@@ -12,4 +12,12 @@ public abstract class Prodotto {
         this.prezzo = prezzo;
         this.calorie = calorie;
     }
+
+    @Override
+    public String toString() {
+        return "Prodotto{" +
+                "prezzo=" + prezzo +
+                ", calorie=" + calorie +
+                '}';
+    }
 }

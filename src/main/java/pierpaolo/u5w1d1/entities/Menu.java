@@ -15,14 +15,18 @@ public class Menu {
     private List<Bevanda> bevandaList;
     private List<Topping> toppingList;
     public void printMenu(){
-        System.out.println("   Menu   ");
-        System.out.println("   Pizza   ");
+        System.out.println("Menu   ");
+        if(this.pizzaList.size() == 1) {
+            System.out.println("Pizza:   ");
+        } else if (this.pizzaList.size() > 1) {
+            System.out.println("Pizze:  ");
+        }
         this.pizzaList.forEach(System.out::println);
-        System.out.println();
-        System.out.println("   Topping   ");
+
+        System.out.println("Topping:   ");
         this.toppingList.forEach(System.out::println);
-        System.out.println();
-        System.out.println("   Drink   ");
+
+        System.out.println("Drink:   ");
         this.bevandaList.forEach(System.out::println);
 
     }
